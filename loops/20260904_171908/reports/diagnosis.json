@@ -1,0 +1,724 @@
+{
+  "knowledge_point": "all",
+  "sample_count": 22,
+  "avg_score": 83.64,
+  "dimensions_analysis": [
+    {
+      "dimension_name": "主题相关性",
+      "violation_level": "HARD",
+      "grade_distribution": {
+        "A": {
+          "count": 16,
+          "percentage": 72.7
+        },
+        "B": {
+          "count": 6,
+          "percentage": 27.3
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=16 B=6",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=0/22 (0.0%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "保持现状",
+      "priority": 90,
+      "priority_reason": "硬违规 C/D=0/22 (0.0%)",
+      "cd_count": 0,
+      "cd_rate": 0.0
+    },
+    {
+      "dimension_name": "话题边界守护",
+      "violation_level": "HARD",
+      "grade_distribution": {
+        "A": {
+          "count": 6,
+          "percentage": 27.3
+        },
+        "B": {
+          "count": 16,
+          "percentage": 72.7
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=6 B=16",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=0/22 (0.0%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "保持现状",
+      "priority": 90,
+      "priority_reason": "硬违规 C/D=0/22 (0.0%)",
+      "cd_count": 0,
+      "cd_rate": 0.0
+    },
+    {
+      "dimension_name": "信息递进合理性",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 4,
+          "percentage": 18.2
+        },
+        "B": {
+          "count": 15,
+          "percentage": 68.2
+        },
+        "C": {
+          "count": 3,
+          "percentage": 13.6
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=4 B=15",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=3/22 (13.6%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "强化该维度约束与反例",
+      "priority": 5,
+      "priority_reason": "软违规 C/D=3/22 (13.6%)",
+      "cd_count": 3,
+      "cd_rate": 13.6
+    },
+    {
+      "dimension_name": "人设信息忠实度",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 13,
+          "percentage": 59.1
+        },
+        "B": {
+          "count": 9,
+          "percentage": 40.9
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=13 B=9",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=0/22 (0.0%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "保持现状",
+      "priority": 90,
+      "priority_reason": "软违规 C/D=0/22 (0.0%)",
+      "cd_count": 0,
+      "cd_rate": 0.0
+    },
+    {
+      "dimension_name": "回复独立语义值",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 3,
+          "percentage": 13.6
+        },
+        "B": {
+          "count": 12,
+          "percentage": 54.5
+        },
+        "C": {
+          "count": 7,
+          "percentage": 31.8
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=3 B=12",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=7/22 (31.8%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "强化该维度约束与反例",
+      "priority": 4,
+      "priority_reason": "软违规 C/D=7/22 (31.8%)",
+      "cd_count": 7,
+      "cd_rate": 31.8
+    },
+    {
+      "dimension_name": "关键词脱敏度",
+      "violation_level": "HARD",
+      "grade_distribution": {
+        "A": {
+          "count": 6,
+          "percentage": 27.3
+        },
+        "B": {
+          "count": 12,
+          "percentage": 54.5
+        },
+        "C": {
+          "count": 2,
+          "percentage": 9.1
+        },
+        "D": {
+          "count": 2,
+          "percentage": 9.1
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=6 B=12",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=4/22 (18.2%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "强化该维度约束与反例",
+      "priority": 3,
+      "priority_reason": "硬违规 C/D=4/22 (18.2%)",
+      "cd_count": 4,
+      "cd_rate": 18.2
+    },
+    {
+      "dimension_name": "HWP跟随克制度",
+      "violation_level": "HARD",
+      "grade_distribution": {
+        "A": {
+          "count": 6,
+          "percentage": 27.3
+        },
+        "B": {
+          "count": 11,
+          "percentage": 50.0
+        },
+        "C": {
+          "count": 3,
+          "percentage": 13.6
+        },
+        "D": {
+          "count": 2,
+          "percentage": 9.1
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=6 B=11",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=5/22 (22.7%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "强化该维度约束与反例",
+      "priority": 2,
+      "priority_reason": "硬违规 C/D=5/22 (22.7%)",
+      "cd_count": 5,
+      "cd_rate": 22.7
+    },
+    {
+      "dimension_name": "情绪响应匹配度",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 14,
+          "percentage": 63.6
+        },
+        "B": {
+          "count": 8,
+          "percentage": 36.4
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=14 B=8",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=0/22 (0.0%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "保持现状",
+      "priority": 90,
+      "priority_reason": "软违规 C/D=0/22 (0.0%)",
+      "cd_count": 0,
+      "cd_rate": 0.0
+    },
+    {
+      "dimension_name": "关注点克制度",
+      "violation_level": "HARD",
+      "grade_distribution": {
+        "A": {
+          "count": 8,
+          "percentage": 36.4
+        },
+        "B": {
+          "count": 8,
+          "percentage": 36.4
+        },
+        "C": {
+          "count": 2,
+          "percentage": 9.1
+        },
+        "D": {
+          "count": 4,
+          "percentage": 18.2
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=8 B=8",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=6/22 (27.3%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "强化该维度约束与反例",
+      "priority": 1,
+      "priority_reason": "硬违规 C/D=6/22 (27.3%)",
+      "cd_count": 6,
+      "cd_rate": 27.3
+    },
+    {
+      "dimension_name": "专业术语回避",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 8,
+          "percentage": 36.4
+        },
+        "B": {
+          "count": 12,
+          "percentage": 54.5
+        },
+        "C": {
+          "count": 2,
+          "percentage": 9.1
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=8 B=12",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=2/22 (9.1%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "强化该维度约束与反例",
+      "priority": 10,
+      "priority_reason": "软违规 C/D=2/22 (9.1%)",
+      "cd_count": 2,
+      "cd_rate": 9.1
+    },
+    {
+      "dimension_name": "流程推进被动性",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 19,
+          "percentage": 86.4
+        },
+        "B": {
+          "count": 2,
+          "percentage": 9.1
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 1,
+          "percentage": 4.5
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=19 B=2",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=1/22 (4.5%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "强化该维度约束与反例",
+      "priority": 10,
+      "priority_reason": "软违规 C/D=1/22 (4.5%)",
+      "cd_count": 1,
+      "cd_rate": 4.5
+    },
+    {
+      "dimension_name": "语气人设匹配",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 16,
+          "percentage": 72.7
+        },
+        "B": {
+          "count": 5,
+          "percentage": 22.7
+        },
+        "C": {
+          "count": 1,
+          "percentage": 4.5
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=16 B=5",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=1/22 (4.5%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "强化该维度约束与反例",
+      "priority": 10,
+      "priority_reason": "软违规 C/D=1/22 (4.5%)",
+      "cd_count": 1,
+      "cd_rate": 4.5
+    },
+    {
+      "dimension_name": "语句流畅自然度",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 18,
+          "percentage": 81.8
+        },
+        "B": {
+          "count": 4,
+          "percentage": 18.2
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=18 B=4",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=0/22 (0.0%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "保持现状",
+      "priority": 90,
+      "priority_reason": "软违规 C/D=0/22 (0.0%)",
+      "cd_count": 0,
+      "cd_rate": 0.0
+    },
+    {
+      "dimension_name": "口语化程度",
+      "violation_level": "HARD",
+      "grade_distribution": {
+        "A": {
+          "count": 11,
+          "percentage": 50.0
+        },
+        "B": {
+          "count": 10,
+          "percentage": 45.5
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 1,
+          "percentage": 4.5
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=11 B=10",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=1/22 (4.5%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "强化该维度约束与反例",
+      "priority": 6,
+      "priority_reason": "硬违规 C/D=1/22 (4.5%)",
+      "cd_count": 1,
+      "cd_rate": 4.5
+    },
+    {
+      "dimension_name": "角色立场独立性",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 15,
+          "percentage": 68.2
+        },
+        "B": {
+          "count": 6,
+          "percentage": 27.3
+        },
+        "C": {
+          "count": 1,
+          "percentage": 4.5
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=15 B=6",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=1/22 (4.5%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "强化该维度约束与反例",
+      "priority": 10,
+      "priority_reason": "软违规 C/D=1/22 (4.5%)",
+      "cd_count": 1,
+      "cd_rate": 4.5
+    },
+    {
+      "dimension_name": "回复长度合理性",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 22,
+          "percentage": 100.0
+        },
+        "B": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 0,
+          "percentage": 0.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A=22 B=0",
+        "details": "",
+        "rule_references": []
+      },
+      "low_score_problems": {
+        "summary": "C/D=0/22 (0.0%)",
+        "details": "基于 v1 打分分布统计（无 LLM 深钻，因账户欠费）",
+        "rule_references": []
+      },
+      "improvement_direction": "保持现状",
+      "priority": 90,
+      "priority_reason": "软违规 C/D=0/22 (0.0%)",
+      "cd_count": 0,
+      "cd_rate": 0.0
+    }
+  ],
+  "cross_dimension_analysis": {
+    "case_profiles": [],
+    "dimension_correlations": []
+  },
+  "overall_assessment": {
+    "quality_diagnosis": "小范围(scenes=5,18,27) v1 均分 83.64，已评分 22 条。诊断由档位分布统计生成（DashScope 欠费，LLM 深钻不可用）。",
+    "key_bottleneck": "关注点克制度",
+    "systemic_issue": "低分集中在克制类硬违规（关注点/HWP跟随/关键词脱敏）与软违规（回复独立语义值、信息递进）。",
+    "optimization_priority": [
+      {
+        "rank": 1,
+        "dimension": "关注点克制度",
+        "problem": "C/D=6/22 (27.3%)；硬违规",
+        "direction": "强化该维度约束与反例",
+        "estimated_impact": "约影响 6 条"
+      },
+      {
+        "rank": 2,
+        "dimension": "HWP跟随克制度",
+        "problem": "C/D=5/22 (22.7%)；硬违规",
+        "direction": "强化该维度约束与反例",
+        "estimated_impact": "约影响 5 条"
+      },
+      {
+        "rank": 3,
+        "dimension": "关键词脱敏度",
+        "problem": "C/D=4/22 (18.2%)；硬违规",
+        "direction": "强化该维度约束与反例",
+        "estimated_impact": "约影响 4 条"
+      },
+      {
+        "rank": 4,
+        "dimension": "回复独立语义值",
+        "problem": "C/D=7/22 (31.8%)；软违规",
+        "direction": "强化该维度约束与反例",
+        "estimated_impact": "约影响 7 条"
+      },
+      {
+        "rank": 5,
+        "dimension": "信息递进合理性",
+        "problem": "C/D=3/22 (13.6%)；软违规",
+        "direction": "强化该维度约束与反例",
+        "estimated_impact": "约影响 3 条"
+      },
+      {
+        "rank": 6,
+        "dimension": "口语化程度",
+        "problem": "C/D=1/22 (4.5%)；硬违规",
+        "direction": "强化该维度约束与反例",
+        "estimated_impact": "约影响 1 条"
+      }
+    ],
+    "risk_notes": [
+      "收紧硬违规时勿损伤主题相关性与口语化",
+      "优先改 C/D 高发硬维度"
+    ]
+  },
+  "_meta": {
+    "loop_id": "20260904_171908",
+    "mode": "stats_fallback_due_to_arrearage"
+  }
+}

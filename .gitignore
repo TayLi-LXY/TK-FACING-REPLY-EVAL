@@ -8,11 +8,23 @@ __pycache__/
 .venv/
 venv/
 
+# web
+web/frontend/node_modules/
+web/frontend/dist/
+
 # os / editor
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
+~$*
+_tmp_*
+
 
 # runtime logs (optional keep locally)
 日志/*.jsonl
+
+# loop runtime (xlsx / runtime config ignored under loops/)
+loops/*/runs/*.xlsx
+loops/*/runtime_config.json
+config.json.bak

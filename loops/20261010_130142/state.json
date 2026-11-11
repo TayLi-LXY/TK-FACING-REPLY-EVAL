@@ -1,0 +1,164 @@
+{
+  "loop_id": "20261010_130142",
+  "phase": "WAITING_ANNOTATION",
+  "created_at": "2026-10-10 13:01:42",
+  "updated_at": "2026-10-10 13:03:43",
+  "dataset": "测评集_抽样版.xlsx",
+  "scenes": "",
+  "items": "",
+  "agent_id": "facing_reply_gen",
+  "agent_name": "面谈客户回复生成",
+  "scorer_id": "default",
+  "scorer_path": "agents/scorer/system.md",
+  "pe": {
+    "v1": "loops/20261010_130142/pe/v1.md",
+    "draft": "loops/20261010_130142/pe/draft.md",
+    "v2": "loops/20261010_130142/pe/v2.md",
+    "active": "v1"
+  },
+  "runs": {
+    "v1_reply": "loops/20261010_130142/runs/v1_reply.xlsx",
+    "v1_eval": "loops/20261010_130142/runs/v1_eval.xlsx",
+    "v2_reply": "loops/20261010_130142/runs/v2_reply.xlsx",
+    "v2_eval": "loops/20261010_130142/runs/v2_eval.xlsx",
+    "dataset": "loops/20261010_130142/runs/dataset.xlsx"
+  },
+  "reports": {
+    "diagnosis": "loops/20261010_130142/reports/diagnosis.json",
+    "annotation": "loops/20261010_130142/reports/annotation.json",
+    "compare": "loops/20261010_130142/reports/compare.json",
+    "eval_prompt": "loops/20261010_130142/reports/eval_prompt.md"
+  },
+  "stats": {
+    "v1": {
+      "scored_count": 0,
+      "avg_score": null,
+      "ok": 0,
+      "fail": 0,
+      "dimension_grade_distribution": {
+        "主题相关性": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "话题边界守护": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "信息递进合理性": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "人设信息忠实度": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "回复独立语义值": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "关键词脱敏度": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "HWP跟随克制度": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "情绪响应匹配度": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "关注点克制度": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "专业术语回避": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "流程推进被动性": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "错误信息纠正": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "语气人设匹配": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "语句流畅自然度": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "口语化程度": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "角色立场独立性": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "回复长度合理性": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        }
+      }
+    },
+    "v2": {}
+  },
+  "decision": null,
+  "notes": ""
+}

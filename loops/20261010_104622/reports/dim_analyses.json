@@ -1,0 +1,593 @@
+[
+  {
+    "dimension_name": "主题相关性",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 23,
+        "percentage": 38.3
+      },
+      "B": {
+        "count": 10,
+        "percentage": 16.7
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "话题边界守护",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 14,
+        "percentage": 23.3
+      },
+      "B": {
+        "count": 19,
+        "percentage": 31.7
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "信息递进合理性",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 10,
+        "percentage": 16.7
+      },
+      "B": {
+        "count": 18,
+        "percentage": 30.0
+      },
+      "C": {
+        "count": 5,
+        "percentage": 8.3
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "error": "Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-c61c65dc-67da-9772-9189-0b54de62b3e1', 'request_id': 'c61c65dc-67da-9772-9189-0b54de62b3e1'}",
+    "improvement_direction": "分析失败，请重试",
+    "priority": 50,
+    "priority_reason": "LLM 调用失败"
+  },
+  {
+    "dimension_name": "人设信息忠实度",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 20,
+        "percentage": 33.3
+      },
+      "B": {
+        "count": 13,
+        "percentage": 21.7
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "回复独立语义值",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 14,
+        "percentage": 23.3
+      },
+      "B": {
+        "count": 10,
+        "percentage": 16.7
+      },
+      "C": {
+        "count": 9,
+        "percentage": 15.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "error": "Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-1a9ec9f5-77c2-9feb-b735-1732e88eb8a3', 'request_id': '1a9ec9f5-77c2-9feb-b735-1732e88eb8a3'}",
+    "improvement_direction": "分析失败，请重试",
+    "priority": 50,
+    "priority_reason": "LLM 调用失败"
+  },
+  {
+    "dimension_name": "关键词脱敏度",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 9,
+        "percentage": 15.0
+      },
+      "B": {
+        "count": 17,
+        "percentage": 28.3
+      },
+      "C": {
+        "count": 5,
+        "percentage": 8.3
+      },
+      "D": {
+        "count": 2,
+        "percentage": 3.3
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "error": "Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-0da51788-2fca-9b99-8526-c9215b3fd45a', 'request_id': '0da51788-2fca-9b99-8526-c9215b3fd45a'}",
+    "improvement_direction": "分析失败，请重试",
+    "priority": 50,
+    "priority_reason": "LLM 调用失败"
+  },
+  {
+    "dimension_name": "HWP跟随克制度",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 10,
+        "percentage": 16.7
+      },
+      "B": {
+        "count": 15,
+        "percentage": 25.0
+      },
+      "C": {
+        "count": 6,
+        "percentage": 10.0
+      },
+      "D": {
+        "count": 2,
+        "percentage": 3.3
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "error": "Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-52606e7b-c5af-9ed7-b280-785b61e78b8a', 'request_id': '52606e7b-c5af-9ed7-b280-785b61e78b8a'}",
+    "improvement_direction": "分析失败，请重试",
+    "priority": 50,
+    "priority_reason": "LLM 调用失败"
+  },
+  {
+    "dimension_name": "情绪响应匹配度",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 20,
+        "percentage": 33.3
+      },
+      "B": {
+        "count": 13,
+        "percentage": 21.7
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "关注点克制度",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 10,
+        "percentage": 16.7
+      },
+      "B": {
+        "count": 10,
+        "percentage": 16.7
+      },
+      "C": {
+        "count": 5,
+        "percentage": 8.3
+      },
+      "D": {
+        "count": 8,
+        "percentage": 13.3
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "error": "Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-a59b455d-db5a-9013-a598-5e6a2298716b', 'request_id': 'a59b455d-db5a-9013-a598-5e6a2298716b'}",
+    "improvement_direction": "分析失败，请重试",
+    "priority": 50,
+    "priority_reason": "LLM 调用失败"
+  },
+  {
+    "dimension_name": "专业术语回避",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 12,
+        "percentage": 20.0
+      },
+      "B": {
+        "count": 19,
+        "percentage": 31.7
+      },
+      "C": {
+        "count": 2,
+        "percentage": 3.3
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "error": "Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-d4f76b26-8018-942a-85a1-4ef222ff3602', 'request_id': 'd4f76b26-8018-942a-85a1-4ef222ff3602'}",
+    "improvement_direction": "分析失败，请重试",
+    "priority": 50,
+    "priority_reason": "LLM 调用失败"
+  },
+  {
+    "dimension_name": "流程推进被动性",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 26,
+        "percentage": 43.3
+      },
+      "B": {
+        "count": 4,
+        "percentage": 6.7
+      },
+      "C": {
+        "count": 2,
+        "percentage": 3.3
+      },
+      "D": {
+        "count": 1,
+        "percentage": 1.7
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "error": "Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-e5713833-1227-9d9e-9653-9dd444c260bc', 'request_id': 'e5713833-1227-9d9e-9653-9dd444c260bc'}",
+    "improvement_direction": "分析失败，请重试",
+    "priority": 50,
+    "priority_reason": "LLM 调用失败"
+  },
+  {
+    "dimension_name": "错误信息纠正",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "B": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 60,
+        "percentage": 100.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "语气人设匹配",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 24,
+        "percentage": 40.0
+      },
+      "B": {
+        "count": 9,
+        "percentage": 15.0
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "语句流畅自然度",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 28,
+        "percentage": 46.7
+      },
+      "B": {
+        "count": 5,
+        "percentage": 8.3
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "口语化程度",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 15,
+        "percentage": 25.0
+      },
+      "B": {
+        "count": 17,
+        "percentage": 28.3
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 1,
+        "percentage": 1.7
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "error": "Error code: 400 - {'error': {'message': 'Access denied, please make sure your account is in good standing. For details, see: https://help.aliyun.com/zh/model-studio/error-code#overdue-payment', 'type': 'Arrearage', 'param': None, 'code': 'Arrearage'}, 'id': 'chatcmpl-d409a23b-9023-9084-b53a-aafc845cb15f', 'request_id': 'd409a23b-9023-9084-b53a-aafc845cb15f'}",
+    "improvement_direction": "分析失败，请重试",
+    "priority": 50,
+    "priority_reason": "LLM 调用失败"
+  },
+  {
+    "dimension_name": "角色立场独立性",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 23,
+        "percentage": 38.3
+      },
+      "B": {
+        "count": 10,
+        "percentage": 16.7
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "回复长度合理性",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 32,
+        "percentage": 53.3
+      },
+      "B": {
+        "count": 1,
+        "percentage": 1.7
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 27,
+        "percentage": 45.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  }
+]

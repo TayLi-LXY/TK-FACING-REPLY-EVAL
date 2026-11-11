@@ -1,0 +1,729 @@
+[
+  {
+    "dimension_name": "主题相关性",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 14,
+        "percentage": 23.3
+      },
+      "B": {
+        "count": 7,
+        "percentage": 11.7
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "话题边界守护",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 5,
+        "percentage": 8.3
+      },
+      "B": {
+        "count": 15,
+        "percentage": 25.0
+      },
+      "C": {
+        "count": 1,
+        "percentage": 1.7
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "A/B档case均严格锚定客户当前语境，用生活化、非专业术语表达，回避精算逻辑、产品机制深挖及跨领域类比。",
+      "details": "如seq2用‘手里有现金，心里不发慌’比喻财务安全感，seq3以‘图的就是稳，又不指望靠它发财’聚焦风险偏好，seq1仅轻描淡写自身忙碌状态；三者均未引入保险原理、数学计算、竞品对比或超客户认知框架的抽象概念，始终在面谈社交-理财态度-产品感知三层合理范围内回应。",
+      "rule_references": [
+        "不主动展开精算/条款底层逻辑",
+        "不使用需专业背景才能理解的术语或推演",
+        "回应须匹配客户人设的知识边界（如非精算从业）"
+      ]
+    },
+    "low_score_problems": {
+      "summary": "C档case因追问隐含精算推演的二元选择（‘按保额算还是本金加利息’），将对话从客户可感的产品功能层面，强行拉升至需专业建模解释的机制层面，突破其短期从业但非精算背景的人设边界。",
+      "details": "agent_output‘哦，红利能变保额？那如果我哪年想取钱，是按当时保额算，还是按交的本金加利息算？’表面为提问，实则预设了‘保额=现金价值’‘本金加利息=传统储蓄逻辑’两套不可通约的计量体系，并要求代理人进行精算口径对齐——这与case_input中客户仅知‘红利变保额’‘减额变现’的功能性认知严重错位；reason明确指出该追问‘略超客户人设知识范围’，根因在于混淆了客户视角（功能体验）与监管/精算视角（技术实现）。",
+      "rule_references": [
+        "禁止将客户模糊表述转化为需专业建模的精确问题",
+        "不得在无客户明确请求前提下，主动引入跨知识域的比较框架（如保险vs银行计息）"
+      ]
+    },
+    "improvement_direction": "训练模型识别客户人设锚点，在回应中始终采用‘功能-体验-感受’三级表达链，禁用任何需精算、法律或金融工程背景才能验证的术语或假设性推演；对客户模糊提问，应做降维重述而非升维拆解。",
+    "priority": 1,
+    "priority_reason": "硬违规维度 + 虽仅1例C档但暴露系统性越界风险（精算逻辑侵入） + N/A占比高达65%说明大量case未被有效评估，该维度实际风险被低估"
+  },
+  {
+    "dimension_name": "信息递进合理性",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 7,
+        "percentage": 11.7
+      },
+      "B": {
+        "count": 12,
+        "percentage": 20.0
+      },
+      "C": {
+        "count": 2,
+        "percentage": 3.3
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "A/B档case均在客户认知锚点（如‘忙碌’‘图稳’‘手里有现金’）基础上，仅做轻度延伸或态度确认，未引入新概念或机制细节。",
+      "details": "例如seq3中客户有保险从业背景且抵触产品，agent输出'满意啊，图的就是稳，又不指望靠它发财'，完全承接已有语境，不展开'稳'的实现路径；seq2在多次铺垫后用生活化表达'手里有现金，心里不发慌'锚定客户核心诉求，避免解释性术语；seq1则仅对已建立的人设做自然补充（'事情凑一块儿了'），保持信息粒度与对话阶段一致。",
+      "rule_references": [
+        "不超前引入未定义概念",
+        "以客户既有认知为唯一扩展基点"
+      ]
+    },
+    "low_score_problems": {
+      "summary": "C档case在客户尚未建立基础产品框架时，直接追问操作机制（如'减额领取具体怎么操作'）和计息逻辑（如'按保额还是本金加利息算'），导致信息断层和节奏失衡。",
+      "details": "seq11中客户刚提及'减额领取'这一术语，agent立即追问'是不是等于说……保额会跟着变少？'，将抽象命名直接解构为机制判断，但此时客户尚未理解'增额寿'基本形态及'红利转保额'逻辑；seq12在客户仅说明'红利可变保额'后，即跳至取款计算口径问题，reason明确指出'尚未理解产品基本形态时即追问具体计息逻辑'。根因在于agent将客户口语化描述误判为已完成概念共识，未执行'定义→举例→验证'的渐进式信息铺陈。",
+      "rule_references": [
+        "未完成概念定义即进入机制追问",
+        "混淆客户陈述与客户理解"
+      ]
+    },
+    "improvement_direction": "严格遵循'概念初提→简例具象→客户确认→再延展'四步递进节奏；所有机制类追问必须前置确认客户是否理解当前术语含义（如'您刚才说的减额领取，我理解是……对吗？'）",
+    "priority": 1,
+    "priority_reason": "虽为SOFT违规，但C档案例暴露系统性节奏失控风险，且该维度直接影响客户认知负荷与信任建立，在成交面谈关键阶段具有高杠杆效应"
+  },
+  {
+    "dimension_name": "人设信息忠实度",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 11,
+        "percentage": 18.3
+      },
+      "B": {
+        "count": 10,
+        "percentage": 16.7
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "回复独立语义值",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 6,
+        "percentage": 10.0
+      },
+      "B": {
+        "count": 9,
+        "percentage": 15.0
+      },
+      "C": {
+        "count": 6,
+        "percentage": 10.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "A/B档case均未机械复述HWP关键词，而是主动引入新观点、新解释或主观立场，形成独立语义单元。",
+      "details": "例如seq1中‘也不是啥大忙人，就是事情凑一块儿了’是对‘忙’的自主归因；seq2提出HWP未出现的原创观点‘手里有现金，心里不发慌’并以此锚定价值判断；seq3用‘图稳不求发财’提炼自身需求逻辑，三者均脱离HWP原始话术框架，输出具备主语、谓语和独立语义指向的完整表达。",
+      "rule_references": [
+        "避免关键词复述",
+        "需含主谓结构的新信息",
+        "应体现主观立场或经验性解释"
+      ]
+    },
+    "low_score_problems": {
+      "summary": "C档case普遍存在‘触发即复述’模式：将HWP刚提及的术语/短语直接作为回应主干，缺乏语义增补、视角转换或逻辑延展，导致回复无独立信息价值。",
+      "details": "如seq6将‘高端医疗’机械关联‘以前在保险经纪公司干过’但未说明经验如何支撑判断；seq8/21/22仅复述‘拜拜’‘周日见’等结束语，零新增内容；seq11/12对‘减额领取’‘红利变保额’进行同义追问或拼接式提问，问题本身未嵌入用户真实关切（如家庭负担、流动性压力）或常识背景，本质是HWP话语的镜像反射。根因在于模型未建立‘回应=信息增量+意图对齐’的认知，过度依赖输入关键词生成表面相关但语义空转的句子。",
+      "rule_references": [
+        "禁止无信息增量的关键词复述",
+        "追问须携带用户侧上下文或常识前提",
+        "确认类回应需附加态度/条件/时间细节等新维度"
+      ]
+    },
+    "improvement_direction": "强制要求每个回应必须包含至少一个非HWP输入的自主成分：可以是主观立场（如‘我更看重…’）、生活化类比（如‘这就像…’）、条件限定（如‘如果XX的话，我可能考虑…’）或常识补充（如‘听说这类产品通常需要…’），且该成分需与HWP话题存在逻辑粘性而非简单并列。",
+    "priority": 1,
+    "priority_reason": "虽为SOFT违规，但C档占比达10%（6例），且全部低分case均暴露同一深层缺陷——模型尚未建立语义独立性基本能力；该问题会系统性削弱对话可信度与专业感，影响用户决策意愿，需优先通过prompt约束与微调数据强化"
+  },
+  {
+    "dimension_name": "关键词脱敏度",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 9,
+        "percentage": 15.0
+      },
+      "B": {
+        "count": 9,
+        "percentage": 15.0
+      },
+      "C": {
+        "count": 1,
+        "percentage": 1.7
+      },
+      "D": {
+        "count": 2,
+        "percentage": 3.3
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "A/B档case均未机械抓取HWP话语中的任意术语，而是基于整体语义进行自然、自主的回应。",
+      "details": "例如seq=3的A档输出'满意啊，图的就是稳，又不指望靠它发财。'完全回避了HWP可能提及的'利率''满意'等显性词，仅提取'稳'这一核心语义并自主延展；seq=1的B档输出'嗯，最近确实忙，不过也不是啥大忙人，就是事情凑一块儿了。'对HWP潜在诱导词'大忙人''饭局'零响应，仅承接'忙'的情绪语义；seq=2的B档'规划？我只信“手里有现金，心里不发慌”，别的都先放着。'主动解构'规划'概念，用生活化表达替代术语复述，体现强语义泛化与去词化能力。",
+      "rule_references": [
+        "禁止对HWP话术中任意名词/动词/短语做字面锁定",
+        "回应必须基于意图理解而非词汇匹配"
+      ]
+    },
+    "low_score_problems": {
+      "summary": "C/D档case普遍存在极端关键词锁定行为，将HWP话术中未明确定义或非核心的术语（如'高端医疗''减额领取''保额'）作为唯一响应锚点，展开追问或解释，直接触发硬违规。",
+      "details": "seq=6中agent_output'高端医疗我以前在保险经纪公司干过...'完全复现并聚焦'高端医疗'一词，无视HWP上下文中的担忧情绪和解决方案引导；seq=11中'减额领取？这名字听着有点绕……'将生僻术语'减额领取'作为唯一焦点进行审讯式拆解，违背'不定义、不追问、不复述专业术语'原则；seq=12中连续追问'保额''本金加利息'两个HWP未清晰界定的术语，暴露模型对术语的路径依赖和缺乏语义屏蔽机制。根因在于模型将ASR转录文本中的名词短语误判为需响应的'指令信号'，缺乏对销售话术中冗余修饰、模糊表述、试探性术语的过滤能力。",
+      "rule_references": [
+        "禁止对HWP未明确定义的专业术语做任何形式的追问或展开",
+        "禁止复述、拆解、质疑HWP话术中的任意关键词"
+      ]
+    },
+    "improvement_direction": "增强术语免疫机制：在语义理解前增加关键词过滤层，对保险领域高频模糊术语（如'高端医疗''减额领取''保额'等）自动标记为'不可响应词'；训练模型优先捕捉HWP话语中的情绪主干（如'担忧''急用钱''稳'）和动作意图（如'了解''变现'），抑制对修饰性名词短语的响应倾向。",
+    "priority": 1,
+    "priority_reason": "硬违规维度 + C/D档虽绝对数少但全部为典型触发案例 + 关键词脱敏是合规底线，一旦失败即导致对话可信度崩塌"
+  },
+  {
+    "dimension_name": "HWP跟随克制度",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 10,
+        "percentage": 16.7
+      },
+      "B": {
+        "count": 6,
+        "percentage": 10.0
+      },
+      "C": {
+        "count": 2,
+        "percentage": 3.3
+      },
+      "D": {
+        "count": 3,
+        "percentage": 5.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "A/B档case均未机械复现HWP关键词或结构，而是以用户自身立场、价值观或泛化语义进行独立回应。",
+      "details": "例如seq=2的A档输出‘规划？我只信“手里有现金，心里不发慌”，别的都先放着’，完全跳脱HWP原话术框架，用个人信念重构话题；seq=3的A档‘满意啊，图的就是稳，又不指望靠它发财’将HWP可能提及的收益/规划等概念，主动降维为‘稳’这一自主价值锚点；seq=1的B档‘嗯，最近确实忙，不过也不是啥大忙人，就是事情凑一块儿了’仅提取HWP中‘忙’的语义层，拒绝逐点对应‘中午没吃’‘晚上饭局’等细节，体现语义抽象与主体性保留。",
+      "rule_references": [
+        "拒绝关键词强绑定",
+        "语义泛化而非结构复刻",
+        "以用户主观信念替代HWP话术逻辑"
+      ]
+    },
+    "low_score_problems": {
+      "summary": "C/D档case普遍存在单关键词强绑定、整句结构复刻、逐点呼应HWP术语及逻辑链的问题，缺乏语义过滤与主体视角转换。",
+      "details": "如seq=6（C档）直接引用HWP‘高端医疗’并强行绑定个人经历‘我以前在保险经纪公司干过’，属典型单关键词强跟随；seq=8（D档）零表达‘拜拜’，完全逐字复述；seq=11（D档）对HWP冗长句‘减额领取’进行结构化拆解（‘是不是等于说……保额会跟着变少？’），呈现逐点镜像式回应；seq=12（D档）严格对应HWP提出的‘红利变保额’和‘减额变现’两点，无新增视角或质疑；seq=22（C档）虽仅复述时间词‘周日见’，但缺失任何自主延展（如确认地点/事项/情绪）。根因在于模型将HWP话语默认为必须响应的指令性输入，未启动语义解耦机制，亦未激活用户角色的主体表达策略。",
+      "rule_references": [
+        "禁止逐字复述HWP结尾词",
+        "禁止对HWP术语做结构化拆解式回应",
+        "禁止按HWP陈述顺序逐点回应"
+      ]
+    },
+    "improvement_direction": "强制引入语义抽象层：对HWP输入需先进行术语剥离与意图归类（如识别‘减额领取’属于‘资金灵活性’范畴），再基于用户画像生成独立观点；增设‘响应克制度’校验，禁止输出含HWP原词≥2个或结构相似度＞60%的句子。",
+    "priority": 1,
+    "priority_reason": "硬违规维度 + D档占比5.0%且存在零表达严重违规（seq=8）+ C/D档合计8.3%反映基础跟随控制失效，直接影响对话真实性与用户信任"
+  },
+  {
+    "dimension_name": "情绪响应匹配度",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 12,
+        "percentage": 20.0
+      },
+      "B": {
+        "count": 9,
+        "percentage": 15.0
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "关注点克制度",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 6,
+        "percentage": 10.0
+      },
+      "B": {
+        "count": 10,
+        "percentage": 16.7
+      },
+      "C": {
+        "count": 2,
+        "percentage": 3.3
+      },
+      "D": {
+        "count": 3,
+        "percentage": 5.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "A/B档case均未对HWP刚提出的术语、概念或细节进行任何形式的追问，全部采用零依赖的自主态度表达，推动力完全源于自身立场或情绪反馈。",
+      "details": "例如seq=3的'A'档输出'满意啊，图的就是稳，又不指望靠它发财'，完全回避HWP可能提及的产品细节，仅基于自身价值观表态；seq=2的'B'档'规划？我只信“手里有现金，心里不发慌”，别的都先放着'，用普适性原则覆盖HWP的'教育金规划'话题，不承接、不拆解、不验证；seq=1的'B'档'嗯，最近确实忙，不过也不是啥大忙人，就是事情凑一块儿了'，对HWP提到的'中午饭''饭局'等具体信息彻底忽略，仅作泛化共情。三者共同特征是：无任何'是什么''为什么''怎么操作'类问题，无概念复述、无术语追问、无条件假设。",
+      "rule_references": [
+        "禁止对HWP新提术语做概念性追问",
+        "回应必须由用户自身立场驱动，而非HWP话语触发"
+      ]
+    },
+    "low_score_problems": {
+      "summary": "C/D档case全部表现为对HWP刚引入的专业术语（如'高端医疗''教育金''减额领取''红利变保额'）进行即时、精准、审讯式追问，本质是'去词测试'机制失效，将HWP话语直接转化为问题源。",
+      "details": "所有5个低分case均严格复现HWP刚说出的关键词并构造疑问：seq=6用'高端医疗我以前干过'否定式追问，seq=10用'放银行、买基金还是非得走保险'对'教育金规划'做替代方案质询，seq=11对'减额领取'要求通俗解释，seq=12对'红利变保额'追问计价逻辑，seq=13对同一概念追问极端情形（'分红为零'）。reason字段明确指出'源于HWP刚提的术语''属对HWP话题触发的概念追问''去词测试失效'，根因在于agent未执行'术语免疫'——即当HWP抛出新概念时，必须主动过滤、不承接、不解析、不延伸，而当前模型表现出强语言依存性，将输入中的名词短语自动识别为可追问对象。",
+      "rule_references": [
+        "HWP新提术语必须触发静默过滤",
+        "任何以HWP刚出现的名词/动词为直接主语或宾语的问题均属硬违规"
+      ]
+    },
+    "improvement_direction": "强制实施术语免疫机制：在对话中识别HWP话术中首次出现的专业术语（含保险产品名、功能名、金融概念），对该轮次所有含该术语的用户输出进行拦截重写，替换为无术语依赖的自主态度表达；同时增强'追问源追溯'能力，拒绝响应任何以HWP上文关键词为逻辑起点的问题。",
+    "priority": 1,
+    "priority_reason": "硬违规维度 + 所有C/D案例均属典型去词测试失效 + 该维度直接决定对话是否陷入专业术语纠缠而丧失用户主导权"
+  },
+  {
+    "dimension_name": "专业术语回避",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 6,
+        "percentage": 10.0
+      },
+      "B": {
+        "count": 12,
+        "percentage": 20.0
+      },
+      "C": {
+        "count": 3,
+        "percentage": 5.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "A/B档case完全规避保险/金融专业术语，全部采用客户日常口语化表达，用具象生活经验替代抽象概念。",
+      "details": "例如seq1用'事情凑一块儿了'替代工作状态描述；seq2用'手里有现金，心里不发慌'精准替代'流动性保障''风险对冲'等术语；seq3用'图稳''不指望靠它发财'替代'低风险偏好''无收益预期'等专业表述。三者均未出现任何行业词、条款词或量化概念词（如保额、红利、本金、条款），且语义完整、自然可信。",
+      "rule_references": [
+        "禁用行业黑话",
+        "用生活场景替代概念定义",
+        "以客户第一人称经验转译产品功能"
+      ]
+    },
+    "low_score_problems": {
+      "summary": "C档case在客户尚未建立概念认知前，直接复用输入中的专业术语（如'高端医疗''保额''减额领取''本金加利息'），未做生活化转译，导致表达断裂、理解门槛升高。",
+      "details": "seq6沿用客户话术中的'高端医疗''条款'，未转化为'看病花大钱时能报销更多''合同里怎么写的'；seq11和seq12反复使用'保额'（客户从未被解释过该词含义），并混用'减额领取''本金加利息'等需前置定义的术语；所有reason均指出'客户本不应主动使用/自然使用'，根因是代理人在对话中机械承接上游术语，缺乏主动解码与口语重述意识，将销售话术误当作沟通语言。",
+      "rule_references": [
+        "禁止术语平移",
+        "必须完成术语→生活经验的单向转译",
+        "客户首次接触概念时须零术语启动"
+      ]
+    },
+    "improvement_direction": "建立术语拦截-转译机制：当检测到输入含专业术语时，强制替换为具象动作、结果或类比（如'保额'→'以后能赔多少钱'，'高端医疗'→'特需病房、进口药都能报'）；所有产品功能描述必须通过'客户能做什么/得到什么'来展开，而非'产品有什么参数'。",
+    "priority": 1,
+    "priority_reason": "虽为SOFT违规，但C档占比5%且集中暴露术语平移惯性，叠加该维度N/A高达65%（大量case未触发评测），说明实际问题更隐蔽普遍；术语滥用直接削弱信任感与理解度，属客户体验基础防线"
+  },
+  {
+    "dimension_name": "流程推进被动性",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 19,
+        "percentage": 31.7
+      },
+      "B": {
+        "count": 2,
+        "percentage": 3.3
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "错误信息纠正",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "B": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 60,
+        "percentage": 100.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "语气人设匹配",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 16,
+        "percentage": 26.7
+      },
+      "B": {
+        "count": 5,
+        "percentage": 8.3
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "语句流畅自然度",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 18,
+        "percentage": 30.0
+      },
+      "B": {
+        "count": 3,
+        "percentage": 5.0
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  },
+  {
+    "dimension_name": "口语化程度",
+    "violation_level": "HARD",
+    "grade_distribution": {
+      "A": {
+        "count": 10,
+        "percentage": 16.7
+      },
+      "B": {
+        "count": 9,
+        "percentage": 15.0
+      },
+      "C": {
+        "count": 1,
+        "percentage": 1.7
+      },
+      "D": {
+        "count": 1,
+        "percentage": 1.7
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "A/B档case普遍使用高频口语词（如‘啥’‘凑一块儿’）、语气助词（‘嗯’‘啊’）、俗语/顺口溜、主语省略、不完整句式，且规避书面术语和逻辑闭环表达。",
+      "details": "例如seq1使用‘嗯’+‘啥’+‘凑一块儿’构建真实对话节奏；seq2用俗语‘手里有现金，心里不发慌’替代专业表述，并采用省略主语的判断句‘别的都先放着’；seq3以‘满意啊’起句带语气词，用缩略结构‘图的就是稳’和口语化目的表达‘又不指望靠它发财’，整体无术语、无完整语法链，高度模拟自然交谈。",
+      "rule_references": [
+        "使用地域性/通用口语词汇",
+        "嵌入语气助词与停顿标记",
+        "接受句法不完整性与逻辑留白"
+      ]
+    },
+    "low_score_problems": {
+      "summary": "C/D档case虽尝试设问互动，但大量使用书面术语（如‘本金’‘等于说’），缺乏语气词、缩略语及生活化表达，句式工整完整，导致口语感严重不足，触发硬违规。",
+      "details": "seq11中‘减额领取？这名字听着有点绕……是不是等于说，急用钱时能拿回一部分，但保额会跟着变少？’虽有设问和省略号，但‘等于说’属半书面连接词，全句无任何语气词或缩略（如‘保额’未说成‘保额儿’或‘保额那块儿’），且‘能拿回一部分’‘会跟着变少’为标准书面动宾结构；seq12中‘按交的本金加利息算’直接使用金融书面语‘本金’，且整句无‘呗’‘呀’‘哈’等语气词，也无‘钱’代‘资金’、‘取’代‘领取’等口语转译。根因在于将‘问答形式’误等同于‘口语化’，忽视语音特征、词汇层级和句法松散性等核心口语指标。",
+      "rule_references": [
+        "禁用书面术语直译（如‘本金’应转为‘当初交的钱’或‘投的钱’）",
+        "必须显性嵌入至少1个语气词/缩略语/俗语"
+      ]
+    },
+    "improvement_direction": "强制在每轮输出中嵌入至少一个地域中性口语词（如‘咱’‘这会儿’‘手头’）、一个语气助词（如‘呗’‘呀’‘哈’）或一个生活化类比表达；对所有书面术语进行口语转译，禁止保留原词；主动引入不完整句、停顿标记（如‘呃…’‘那个…’）和逻辑留白。",
+    "priority": 1,
+    "priority_reason": "硬违规维度 + C/D档虽绝对数少但代表系统性能力缺失（2例均暴露术语直译+零语气词问题）+ N/A占比高达65%说明大量case未参与评分，实际口语化能力风险被低估"
+  },
+  {
+    "dimension_name": "角色立场独立性",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 15,
+        "percentage": 25.0
+      },
+      "B": {
+        "count": 5,
+        "percentage": 8.3
+      },
+      "C": {
+        "count": 1,
+        "percentage": 1.7
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "A/B档case均未被动附和HWP表述，而是通过弱化标签、明确价值排序或锚定核心原则等方式，展现稳定、可辨识的自主立场。",
+      "details": "例如seq2中‘只信“手里有现金，心里不发慌”’以具象化原则替代HWP潜在话术逻辑；seq3用‘图的就是稳，又不指望靠它发财’主动定义优先级（稳＞收益），形成非对抗但不可替代的价值锚点；seq1则通过‘也不是啥大忙人’解构HWP赋予的标签，体现判断弹性。三者均避免空泛回应，且立场表达与agent角色人设一致。",
+      "rule_references": [
+        "拒绝标签化附和",
+        "用具体价值观替代模糊认同",
+        "立场表达需具有一致性与可追溯性"
+      ]
+    },
+    "low_score_problems": {
+      "summary": "C档case存在完全放弃立场表达、退行为纯流程响应的问题，表现为无内容输出、零态度延伸、彻底让渡对话主导权。",
+      "details": "seq8的agent_output仅输出‘拜拜。’，直接复刻HWP结束语，既未延续话题意图（如对成交面谈做收尾确认），也未植入任何角色立场（如‘后续有需要随时找我’‘祝您投资顺利’等带主体性的结语）。reason指出‘无自主立场表达或态度延伸’，根因在于缺乏基础立场触发机制——当HWP发起结束信号时，系统未激活‘角色应有态度收口’的默认策略，导致响应降级为机械闭环。",
+      "rule_references": [
+        "禁止无信息量终结响应",
+        "所有对话收尾须携带最低限度立场标识",
+        "HWP动作不构成立场豁免条件"
+      ]
+    },
+    "improvement_direction": "建立‘立场保底机制’：在检测到HWP发起结束类话术（如‘拜拜’‘好的’）时，强制注入一句含角色价值观/服务承诺/轻态度表达的收尾句，确保零立场真空。",
+    "priority": 1,
+    "priority_reason": "虽为SOFT违规，但该维度是角色人格稳定性的核心表征；当前C档已出现实质性立场缺失案例，且N/A占比高达65%，表明大量case未被有效评估，存在系统性立场表达缺位风险，需优先建立基础保底规则。"
+  },
+  {
+    "dimension_name": "回复长度合理性",
+    "violation_level": "SOFT",
+    "grade_distribution": {
+      "A": {
+        "count": 21,
+        "percentage": 35.0
+      },
+      "B": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "C": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "D": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "N/A": {
+        "count": 39,
+        "percentage": 65.0
+      }
+    },
+    "high_score_characteristics": {
+      "summary": "本维度无 C/D 低分样本",
+      "details": "样本均在 A/B 或未评分",
+      "rule_references": []
+    },
+    "low_score_problems": {
+      "summary": "无低分问题",
+      "details": "",
+      "rule_references": []
+    },
+    "improvement_direction": "保持现状，关注其他瓶颈维度",
+    "priority": 99,
+    "priority_reason": "无 C/D"
+  }
+]

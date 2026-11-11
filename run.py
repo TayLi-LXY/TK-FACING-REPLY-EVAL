@@ -30,6 +30,7 @@ SCRIPT_DIR = Path(__file__).parent
 EVAL_FILE = SCRIPT_DIR / "测评集.csv"
 OUTPUT_FILE = SCRIPT_DIR / "回复输出目录" / "回复输出.xlsx"
 LOG_DIR = SCRIPT_DIR / "日志"
+CONFIG_PATH = SCRIPT_DIR / "config.json"
 
 COL = {
     "instance_id": "instance_id",
@@ -55,8 +56,9 @@ _llm_log_file = None
 _header_to_idx: dict[str, int] = {}
 
 
-def load_config():
-    with open(SCRIPT_DIR / "config.json", "r", encoding="utf-8") as f:
+def load_config(path: Path | None = None):
+    cfg = path or CONFIG_PATH
+    with open(cfg, "r", encoding="utf-8-sig") as f:
         return json.load(f)
 
 
@@ -200,7 +202,8 @@ def scene_id_of(row: dict) -> str:
 
 
 def is_done(status: str) -> bool:
-    return bool(status) and status.lower() not in ("none", "null", "", "0")
+    """仅「成功」视为已完成；空 / 失败:* 都会进入待跑队列。"""
+    return (status or "").strip() == "成功"
 
 
 def process_row_data(row: dict, client: OpenAI, config: dict, retries: int,
@@ -298,11 +301,23 @@ def run_scene(scene_id: str, row_indices: list[int], rows_data: list[dict],
 
 
 def main():
+    global EVAL_FILE, OUTPUT_FILE, CONFIG_PATH
+
     parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument("--scenes", "-s", default="",
                         help="instance_id 列表，支持区间和逗号分隔\n例: --scenes=1-10 或 --scenes=1,3,5")
     parser.add_argument("--items", default="",
                         help="按「第N条」数据序号过滤（1起，不含表头）\n例: --items=8,9,10 或 --items=8-10")
+    parser.add_argument("--all", action="store_true",
+                        help="处理全部实例（可不指定 --scenes/--items）")
+    parser.add_argument("--input", default="",
+                        help="测评集输入路径（默认 测评集.csv）")
+    parser.add_argument("--output", default="",
+                        help="回复输出 xlsx 路径（默认 回复输出目录/回复输出.xlsx）")
+    parser.add_argument("--config", default="",
+                        help="配置文件路径（默认 config.json）")
+    parser.add_argument("--pe-file", default="",
+                        help="覆盖 agent.system_prompt 的提示词文件")
     parser.add_argument("--workers", type=int, default=3,
                         help="并发实例数 (默认3，每个 instance_id 一个线程)")
     parser.add_argument("--retries", type=int, default=2, help="失败重试次数 (默认2)")
@@ -311,10 +326,28 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="只打印待执行实例，不实际执行")
     args = parser.parse_args()
 
-    if not args.scenes and not args.items:
-        raise SystemExit("请指定 --scenes 或 --items")
+    if not args.scenes and not args.items and not args.all:
+        raise SystemExit("请指定 --scenes、--items 或 --all")
 
-    config = load_config()
+    if args.input:
+        EVAL_FILE = Path(args.input)
+        if not EVAL_FILE.is_absolute():
+            EVAL_FILE = SCRIPT_DIR / EVAL_FILE
+    if args.output:
+        OUTPUT_FILE = Path(args.output)
+        if not OUTPUT_FILE.is_absolute():
+            OUTPUT_FILE = SCRIPT_DIR / OUTPUT_FILE
+    if args.config:
+        CONFIG_PATH = Path(args.config)
+        if not CONFIG_PATH.is_absolute():
+            CONFIG_PATH = SCRIPT_DIR / CONFIG_PATH
+
+    config = load_config(CONFIG_PATH)
+    if args.pe_file:
+        pe_path = Path(args.pe_file)
+        if not pe_path.is_absolute():
+            pe_path = SCRIPT_DIR / pe_path
+        config["agent"]["system_prompt"] = pe_path.read_text(encoding="utf-8")
     model_cfg = config["model"]
     agent_cfg = config["agent"]
 
@@ -330,7 +363,9 @@ def main():
     print(f"Model:        {model_cfg.get('baseUrl', '')}{model_cfg.get('endpoint', '')} / {model_cfg['modelName']}")
     print(f"测评集:       {EVAL_FILE}")
     print(f"输出文件:     {OUTPUT_FILE}")
-    print(f"实例过滤:     {','.join(requested) if requested else '全部(按条目)'}")
+    print(f"配置:         {CONFIG_PATH}")
+    print(f"PE覆盖:       {args.pe_file or '无'}")
+    print(f"实例过滤:     {','.join(requested) if requested else '全部'}")
     print(f"条目过滤:     {args.items or '无'}")
     print(f"并发实例数:   {args.workers}")
     print(f"重试次数:     {args.retries}")

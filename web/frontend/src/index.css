@@ -1,0 +1,19 @@
+/* Hallmark · macrostructure: Workbench · theme: Cobalt · genre: modern-minimal
+ * nav: N3 side-rail · audience: eval engineers · use: start loop · tone: utilitarian
+ * pre-emit critique: P4 H4 E4 S4 R4 V4
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap');
+
+html,
+body {
+  min-height: 100%;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100%;
+}

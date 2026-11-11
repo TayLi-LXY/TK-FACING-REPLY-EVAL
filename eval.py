@@ -21,7 +21,12 @@ EVAL_FILE = SCRIPT_DIR / "回复输出目录" / "回复输出.xlsx"
 OUTPUT_FILE = SCRIPT_DIR / "测评输出目录" / "测评输出.xlsx"
 OUTPUT_TMP_FILE = SCRIPT_DIR / "测评输出目录" / "测评输出_tmp.xlsx"
 LOG_DIR = SCRIPT_DIR / "日志"
-EVAL_PROMPT_FILE = SCRIPT_DIR / "测评提示词.md"
+try:
+    from loop_lib import SCORER_PE
+    EVAL_PROMPT_FILE = SCORER_PE
+except Exception:
+    EVAL_PROMPT_FILE = SCRIPT_DIR / "agents" / "scorer" / "system.md"
+CONFIG_PATH = SCRIPT_DIR / "config.json"
 
 _stop_event = threading.Event()
 _wb_ref = [None]
@@ -85,8 +90,9 @@ def parse_scenes_arg(scenes_str: str) -> list[str]:
     return result
 
 
-def load_config():
-    with open(SCRIPT_DIR / "config.json", "r", encoding="utf-8") as f:
+def load_config(path: Path | None = None):
+    cfg = path or CONFIG_PATH
+    with open(cfg, "r", encoding="utf-8-sig") as f:
         return json.load(f)
 
 
@@ -186,11 +192,12 @@ def load_rows(ws) -> list[dict]:
 
 
 def is_done(status: str) -> bool:
-    return bool(status) and status.lower() not in ("none", "null", "", "0")
+    """回复执行结果：仅「成功」可进入打分。"""
+    return (status or "").strip() == "成功"
 
 
 def scores_done(row: dict) -> bool:
-    return bool(is_done(row.get("主题相关性_分", "")))
+    return bool((row.get("主题相关性_分") or "").strip())
 
 
 def extract_json(text: str) -> dict:
@@ -458,11 +465,21 @@ def main():
     atexit.register(_atexit_save)
     signal.signal(signal.SIGINT, _signal_handler)
 
+    global EVAL_FILE, OUTPUT_FILE, OUTPUT_TMP_FILE, CONFIG_PATH, EVAL_PROMPT_FILE
+
     parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument("--scenes", "-s", default="",
                         help="instance_id 列表，支持区间。空则处理全部\n例: --scenes=1-3")
     parser.add_argument("--items", default="",
                         help="按「第N条」数据序号过滤（1起，不含表头）\n例: --items=8,9,10 或 --items=8-10")
+    parser.add_argument("--input", default="",
+                        help="回复输出 xlsx 路径（默认 回复输出目录/回复输出.xlsx）")
+    parser.add_argument("--output", default="",
+                        help="测评输出 xlsx 路径（默认 测评输出目录/测评输出.xlsx）")
+    parser.add_argument("--config", default="",
+                        help="配置文件路径（默认 config.json）")
+    parser.add_argument("--eval-prompt", default="",
+                        help="测评提示词路径（默认 agents/scorer/system.md）")
     parser.add_argument("--limit", type=int, default=0,
                         help="最多处理多少条（0=不限制）。试跑可用 --limit 3")
     parser.add_argument("--workers", type=int, default=1,
@@ -472,12 +489,29 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="只打印待执行条目")
     args = parser.parse_args()
 
+    if args.input:
+        EVAL_FILE = Path(args.input)
+        if not EVAL_FILE.is_absolute():
+            EVAL_FILE = SCRIPT_DIR / EVAL_FILE
+    if args.output:
+        OUTPUT_FILE = Path(args.output)
+        if not OUTPUT_FILE.is_absolute():
+            OUTPUT_FILE = SCRIPT_DIR / OUTPUT_FILE
+        OUTPUT_TMP_FILE = OUTPUT_FILE.with_name(OUTPUT_FILE.stem + "_tmp.xlsx")
+    if args.config:
+        CONFIG_PATH = Path(args.config)
+        if not CONFIG_PATH.is_absolute():
+            CONFIG_PATH = SCRIPT_DIR / CONFIG_PATH
+    if args.eval_prompt:
+        from loop_lib import resolve_prompt_path
+        EVAL_PROMPT_FILE = resolve_prompt_path(args.eval_prompt)
+
     if not EVAL_FILE.exists():
         raise SystemExit(f"回复输出不存在: {EVAL_FILE}（请先运行 run.py）")
     if not EVAL_PROMPT_FILE.exists():
         raise SystemExit(f"测评提示词不存在: {EVAL_PROMPT_FILE}")
 
-    config = load_config()
+    config = load_config(CONFIG_PATH)
     model_cfg = config["model"]
     eval_sys = load_eval_prompt_template()
     requested = parse_scenes_arg(args.scenes) if args.scenes else None
@@ -487,6 +521,7 @@ def main():
     print(f"Model:        {model_cfg.get('baseUrl', '')}{model_cfg.get('endpoint', '')} / {model_cfg['modelName']}", flush=True)
     print(f"输入文件:     {EVAL_FILE}", flush=True)
     print(f"输出文件:     {OUTPUT_FILE}", flush=True)
+    print(f"配置:         {CONFIG_PATH}", flush=True)
     print(f"测评提示词:   {EVAL_PROMPT_FILE}", flush=True)
     print(f"实例过滤:     {','.join(requested) if requested else '全部'}", flush=True)
     print(f"条目过滤:     {args.items or '无'}", flush=True)

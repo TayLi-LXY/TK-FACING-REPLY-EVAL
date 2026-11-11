@@ -1,0 +1,38 @@
+{
+  "loop_id": "20261010_115314",
+  "phase": "RUNNING_V1",
+  "created_at": "2026-10-10 11:53:14",
+  "updated_at": "2026-10-10 11:53:14",
+  "dataset": "测评集_抽样版.xlsx",
+  "scenes": "",
+  "items": "",
+  "agent_id": "facing_reply_gen",
+  "agent_name": "面谈客户回复生成",
+  "scorer_id": "default",
+  "scorer_path": "测评提示词.md",
+  "pe": {
+    "v1": "loops/20261010_115314/pe/v1.md",
+    "draft": "loops/20261010_115314/pe/draft.md",
+    "v2": "loops/20261010_115314/pe/v2.md",
+    "active": "v1"
+  },
+  "runs": {
+    "v1_reply": "loops/20261010_115314/runs/v1_reply.xlsx",
+    "v1_eval": "loops/20261010_115314/runs/v1_eval.xlsx",
+    "v2_reply": "loops/20261010_115314/runs/v2_reply.xlsx",
+    "v2_eval": "loops/20261010_115314/runs/v2_eval.xlsx",
+    "dataset": "loops/20261010_115314/runs/dataset.xlsx"
+  },
+  "reports": {
+    "diagnosis": "loops/20261010_115314/reports/diagnosis.json",
+    "annotation": "loops/20261010_115314/reports/annotation.json",
+    "compare": "loops/20261010_115314/reports/compare.json",
+    "eval_prompt": "loops/20261010_115314/reports/eval_prompt.md"
+  },
+  "stats": {
+    "v1": {},
+    "v2": {}
+  },
+  "decision": null,
+  "notes": ""
+}

@@ -1,0 +1,3 @@
+# loop workspaces (runtime)
+loops/*/runs/*.xlsx
+loops/*/runtime_config.json

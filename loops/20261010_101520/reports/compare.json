@@ -1,0 +1,152 @@
+{
+  "loop_id": "20261010_101520",
+  "v1": {
+    "avg_score": 80.91,
+    "scored_count": 22
+  },
+  "v2": {
+    "avg_score": 80.0,
+    "scored_count": 21
+  },
+  "delta_avg": -0.91,
+  "dimensions": [
+    {
+      "dimension": "主题相关性",
+      "v1_cd_rate": 0.0,
+      "v2_cd_rate": 0.0,
+      "delta_cd_rate": 0.0,
+      "improved": false
+    },
+    {
+      "dimension": "话题边界守护",
+      "v1_cd_rate": 0.0,
+      "v2_cd_rate": 1.67,
+      "delta_cd_rate": 1.67,
+      "improved": false
+    },
+    {
+      "dimension": "信息递进合理性",
+      "v1_cd_rate": 1.67,
+      "v2_cd_rate": 6.67,
+      "delta_cd_rate": 5.0,
+      "improved": false
+    },
+    {
+      "dimension": "人设信息忠实度",
+      "v1_cd_rate": 0.0,
+      "v2_cd_rate": 1.67,
+      "delta_cd_rate": 1.67,
+      "improved": false
+    },
+    {
+      "dimension": "回复独立语义值",
+      "v1_cd_rate": 13.33,
+      "v2_cd_rate": 10.0,
+      "delta_cd_rate": -3.33,
+      "improved": true
+    },
+    {
+      "dimension": "关键词脱敏度",
+      "v1_cd_rate": 10.0,
+      "v2_cd_rate": 8.33,
+      "delta_cd_rate": -1.67,
+      "improved": true
+    },
+    {
+      "dimension": "HWP跟随克制度",
+      "v1_cd_rate": 13.33,
+      "v2_cd_rate": 11.67,
+      "delta_cd_rate": -1.66,
+      "improved": true
+    },
+    {
+      "dimension": "情绪响应匹配度",
+      "v1_cd_rate": 0.0,
+      "v2_cd_rate": 1.67,
+      "delta_cd_rate": 1.67,
+      "improved": false
+    },
+    {
+      "dimension": "关注点克制度",
+      "v1_cd_rate": 10.0,
+      "v2_cd_rate": 8.33,
+      "delta_cd_rate": -1.67,
+      "improved": true
+    },
+    {
+      "dimension": "专业术语回避",
+      "v1_cd_rate": 3.33,
+      "v2_cd_rate": 6.67,
+      "delta_cd_rate": 3.34,
+      "improved": false
+    },
+    {
+      "dimension": "流程推进被动性",
+      "v1_cd_rate": 0.0,
+      "v2_cd_rate": 1.67,
+      "delta_cd_rate": 1.67,
+      "improved": false
+    },
+    {
+      "dimension": "错误信息纠正",
+      "v1_cd_rate": 0.0,
+      "v2_cd_rate": 0.0,
+      "delta_cd_rate": 0.0,
+      "improved": false
+    },
+    {
+      "dimension": "语气人设匹配",
+      "v1_cd_rate": 0.0,
+      "v2_cd_rate": 1.67,
+      "delta_cd_rate": 1.67,
+      "improved": false
+    },
+    {
+      "dimension": "语句流畅自然度",
+      "v1_cd_rate": 0.0,
+      "v2_cd_rate": 0.0,
+      "delta_cd_rate": 0.0,
+      "improved": false
+    },
+    {
+      "dimension": "口语化程度",
+      "v1_cd_rate": 1.67,
+      "v2_cd_rate": 5.0,
+      "delta_cd_rate": 3.33,
+      "improved": false
+    },
+    {
+      "dimension": "角色立场独立性",
+      "v1_cd_rate": 1.67,
+      "v2_cd_rate": 0.0,
+      "delta_cd_rate": -1.67,
+      "improved": true
+    },
+    {
+      "dimension": "回复长度合理性",
+      "v1_cd_rate": 0.0,
+      "v2_cd_rate": 0.0,
+      "delta_cd_rate": 0.0,
+      "improved": false
+    }
+  ],
+  "improved_dimensions": [
+    "回复独立语义值",
+    "关键词脱敏度",
+    "HWP跟随克制度",
+    "关注点克制度",
+    "角色立场独立性"
+  ],
+  "regressed_dimensions": [
+    "话题边界守护",
+    "信息递进合理性",
+    "人设信息忠实度",
+    "情绪响应匹配度",
+    "专业术语回避",
+    "流程推进被动性",
+    "语气人设匹配",
+    "口语化程度"
+  ],
+  "suggestion": "ROLLED_BACK",
+  "suggestion_reason": "均分 80.91 → 80.0 (Δ-0.91)；C/D率改善维度 5，退步 8"
+}

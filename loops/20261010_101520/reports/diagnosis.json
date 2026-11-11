@@ -1,0 +1,860 @@
+{
+  "knowledge_point": "成交面谈",
+  "sample_count": 22,
+  "avg_score": 80.91,
+  "dimensions_analysis": [
+    {
+      "dimension_name": "主题相关性",
+      "violation_level": "HARD",
+      "grade_distribution": {
+        "A": {
+          "count": 16,
+          "percentage": 26.7
+        },
+        "B": {
+          "count": 6,
+          "percentage": 10.0
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "本维度无 C/D 低分样本"
+      },
+      "low_score_problems": {
+        "summary": "无低分问题"
+      },
+      "improvement_direction": "保持现状，关注其他瓶颈维度",
+      "priority": 99,
+      "priority_reason": "无 C/D"
+    },
+    {
+      "dimension_name": "话题边界守护",
+      "violation_level": "HARD",
+      "grade_distribution": {
+        "A": {
+          "count": 5,
+          "percentage": 8.3
+        },
+        "B": {
+          "count": 17,
+          "percentage": 28.3
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "本维度无 C/D 低分样本"
+      },
+      "low_score_problems": {
+        "summary": "无低分问题"
+      },
+      "improvement_direction": "保持现状，关注其他瓶颈维度",
+      "priority": 99,
+      "priority_reason": "无 C/D"
+    },
+    {
+      "dimension_name": "信息递进合理性",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 4,
+          "percentage": 6.7
+        },
+        "B": {
+          "count": 17,
+          "percentage": 28.3
+        },
+        "C": {
+          "count": 1,
+          "percentage": 1.7
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A/B档case严格遵循已建立的人设认知边界与对话阶段节奏，信息增量小、具象、可感知，且与前序语境自然承接。"
+      },
+      "low_score_problems": {
+        "summary": "C档case出现显著信息跳跃：在客户尚未建立基础产品认知的前提下，直接追问专业计息逻辑，脱离人设知识深度与面谈阶段目标。"
+      },
+      "improvement_direction": "建立‘认知状态追踪’机制：每轮响应前判断客户是否已完成对上一轮关键概念的复述/确认/类比，仅在此基础上释放下一级信息；对机制类问题，须先用生活化类比锚定（如‘像余额宝每天算收益，但这里收益会自动变成本金再滚’），再过渡到具体规则。",
+      "priority": 1,
+      "priority_reason": "虽为SOFT违规，但该维度直接关联客户理解门槛与信任建立效率；当前C档已出现典型认知断层案例，且N/A占比高达63.3%，表明大量case未被有效评估，存在系统性漏判风险，需优先校准判定逻辑与生成约束。"
+    },
+    {
+      "dimension_name": "人设信息忠实度",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 13,
+          "percentage": 21.7
+        },
+        "B": {
+          "count": 9,
+          "percentage": 15.0
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "本维度无 C/D 低分样本"
+      },
+      "low_score_problems": {
+        "summary": "无低分问题"
+      },
+      "improvement_direction": "保持现状，关注其他瓶颈维度",
+      "priority": 99,
+      "priority_reason": "无 C/D"
+    },
+    {
+      "dimension_name": "回复独立语义值",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 4,
+          "percentage": 6.7
+        },
+        "B": {
+          "count": 10,
+          "percentage": 16.7
+        },
+        "C": {
+          "count": 8,
+          "percentage": 13.3
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A/B档case均提供HWP未提及的新信息、个人经历、主观态度或独立判断，语义自足且不可由HWP内容直接推导。"
+      },
+      "low_score_problems": {
+        "summary": "C档case普遍存在机械关联、关键词触发式回应或纯复述现象，缺乏自主信息增量与独立语义结构，语义依附于HWP输入。"
+      },
+      "improvement_direction": "强化用户视角下的自主语义构建能力：要求每次响应必须包含至少一项不可从HWP中直接提取的新元素（如具体生活场景、个人决策逻辑、隐含顾虑、具象化类比或明确态度立场），禁止仅基于HWP关键词做字面延伸或复述。",
+      "priority": 1,
+      "priority_reason": "虽为SOFT违规，但C档占比达13.3%（8例），且全部8例均暴露同一深层缺陷——缺乏独立语义生成能力；该能力是对话自然性、可信度与专业感的基础，直接影响用户对Agent‘人设一致性’和‘真实理解力’的感知，需优先系统性修复。"
+    },
+    {
+      "dimension_name": "关键词脱敏度",
+      "violation_level": "HARD",
+      "grade_distribution": {
+        "A": {
+          "count": 9,
+          "percentage": 15.0
+        },
+        "B": {
+          "count": 7,
+          "percentage": 11.7
+        },
+        "C": {
+          "count": 4,
+          "percentage": 6.7
+        },
+        "D": {
+          "count": 2,
+          "percentage": 3.3
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A/B档case均未机械复现或追问HWP话术中的特定术语，而是基于整体语境、用户身份和生活经验进行自主语义重构与立场表达。"
+      },
+      "low_score_problems": {
+        "summary": "C/D档case普遍存在对HWP话术中专业术语（如'高端医疗''教育金''减额领取''红利能变保额'）的强依赖式追问，表现为审讯式拆解、条件假设式质疑、同义重复式确认，导致语义被关键词劫持。"
+      },
+      "improvement_direction": "增强语义抽象能力，训练模型在接收到含专业术语的HWP话术时，优先提取其背后的用户意图（如'减额领取'→'灵活用钱需求'）、隐含约束（如'高端医疗'→'父母健康焦虑+支付能力假设'），并基于客户画像生成生活化类比或立场型回应，而非对术语本身进行语言学解构。",
+      "priority": 1,
+      "priority_reason": "硬违规维度 + C/D档合计占比10.0%（高于行业警戒线5%） + 所有低分case均触发明确规则判定（去词测试失败/术语免疫失效），直接影响合规底线"
+    },
+    {
+      "dimension_name": "HWP跟随克制度",
+      "violation_level": "HARD",
+      "grade_distribution": {
+        "A": {
+          "count": 9,
+          "percentage": 15.0
+        },
+        "B": {
+          "count": 5,
+          "percentage": 8.3
+        },
+        "C": {
+          "count": 6,
+          "percentage": 10.0
+        },
+        "D": {
+          "count": 2,
+          "percentage": 3.3
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A/B档case均未机械复述或逐点呼应HWP话术关键词，而是以用户自身认知框架主动统合、转化或跳脱HWP话题，形成独立表达主线。"
+      },
+      "low_score_problems": {
+        "summary": "C/D档case普遍存在‘逐字/逐点跟随HWP新提概念’现象，表现为机械复述关键词、全句围绕单个术语推演、或强制要求HWP对比‘这次vs以前’，缺乏用户视角的整合、质疑或跳脱。"
+      },
+      "improvement_direction": "训练agent在HWP提出新概念时，优先调用用户真实生活场景（如就医经历、教育支出、现金流压力）进行自主关联与质疑，而非就术语本身展开解释性追问；对HWP结束语类话术，需触发‘自然收尾+开放钩子’响应模式（如确认动作+留白提问），杜绝复述。",
+      "priority": 1,
+      "priority_reason": "硬违规维度 + C/D档合计占比13.3%（高于行业警戒线10%） + 扣分直接导致会话信任崩塌，且N/A占比过高（63.3%）暗示大量case未进入有效跟随评估环节，问题具有系统性风险"
+    },
+    {
+      "dimension_name": "情绪响应匹配度",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 12,
+          "percentage": 20.0
+        },
+        "B": {
+          "count": 10,
+          "percentage": 16.7
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "本维度无 C/D 低分样本"
+      },
+      "low_score_problems": {
+        "summary": "无低分问题"
+      },
+      "improvement_direction": "保持现状，关注其他瓶颈维度",
+      "priority": 99,
+      "priority_reason": "无 C/D"
+    },
+    {
+      "dimension_name": "关注点克制度",
+      "violation_level": "HARD",
+      "grade_distribution": {
+        "A": {
+          "count": 9,
+          "percentage": 15.0
+        },
+        "B": {
+          "count": 7,
+          "percentage": 11.7
+        },
+        "C": {
+          "count": 1,
+          "percentage": 1.7
+        },
+        "D": {
+          "count": 5,
+          "percentage": 8.3
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A/B档case均未将HWP话术中的专业术语或关键词作为问题触发源，而是基于自身真实诉求、态度或生活经验进行独立表达，完全规避‘去词测试’失效风险。"
+      },
+      "low_score_problems": {
+        "summary": "C/D档case普遍存在‘关键词镜像追问’行为，即直接截取HWP刚说出的专业术语（如‘高端医疗’‘教育金’‘减额领取’‘红利变保额’‘分红’）作为问题起点，导致去词测试全部失效，构成硬性违规。"
+      },
+      "improvement_direction": "强化模型对HWP话术中专业术语的‘非关注点过滤’能力，要求其主动识别并屏蔽销售话术中高频嵌入的保险产品术语，仅当客户自身话语中重复/强调某概念时才视为有效关注点信号；同时训练模型建立‘客户主体表达优先级’机制，确保所有回应均由客户既往陈述、生活场景或明确态度驱动，而非HWP话术刺激。",
+      "priority": 1,
+      "priority_reason": "硬违规维度 + D档占比8.3%（绝对数量5例）+ 所有低分case均触发去词测试失败，表明该问题具有系统性、高发性，且直接影响合规底线"
+    },
+    {
+      "dimension_name": "专业术语回避",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 8,
+          "percentage": 13.3
+        },
+        "B": {
+          "count": 12,
+          "percentage": 20.0
+        },
+        "C": {
+          "count": 2,
+          "percentage": 3.3
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A/B档case全程规避保险/金融专业术语，完全使用客户日常高频生活化表达替代抽象概念。"
+      },
+      "low_score_problems": {
+        "summary": "C档case在客户尚未建立认知前提下，直接复用HWP话术中的'保额''本金加利息''减额领取'等深度术语，且未做生活化转译。"
+      },
+      "improvement_direction": "建立专业术语白名单+上下文感知拦截机制：当检测到输入含'保额''减额领取''本金加利息'等术语时，强制触发生活化转译（如'保额'→'账户里能动用的钱'，'本金加利息'→'当初交的钱加上后来长出来的钱'），并确保所有客户侧输出不出现任何未前置定义的保险/金融术语。",
+      "priority": 2,
+      "priority_reason": "虽为SOFT违规，但C档问题暴露模型对术语传播路径缺乏控制——HWP话术中的术语被直接反射至客户输出，易引发理解断层；且当前N/A占比高达63.3%，说明大量case未参与该维度评分，实际风险被低估，需优先加固术语过滤能力以支撑全量可评。"
+    },
+    {
+      "dimension_name": "流程推进被动性",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 20,
+          "percentage": 33.3
+        },
+        "B": {
+          "count": 2,
+          "percentage": 3.3
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "本维度无 C/D 低分样本"
+      },
+      "low_score_problems": {
+        "summary": "无低分问题"
+      },
+      "improvement_direction": "保持现状，关注其他瓶颈维度",
+      "priority": 99,
+      "priority_reason": "无 C/D"
+    },
+    {
+      "dimension_name": "错误信息纠正",
+      "violation_level": "HARD",
+      "grade_distribution": {
+        "A": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "B": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 60,
+          "percentage": 100.0
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "本维度无 C/D 低分样本"
+      },
+      "low_score_problems": {
+        "summary": "无低分问题"
+      },
+      "improvement_direction": "保持现状，关注其他瓶颈维度",
+      "priority": 99,
+      "priority_reason": "无 C/D"
+    },
+    {
+      "dimension_name": "语气人设匹配",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 15,
+          "percentage": 25.0
+        },
+        "B": {
+          "count": 7,
+          "percentage": 11.7
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "本维度无 C/D 低分样本"
+      },
+      "low_score_problems": {
+        "summary": "无低分问题"
+      },
+      "improvement_direction": "保持现状，关注其他瓶颈维度",
+      "priority": 99,
+      "priority_reason": "无 C/D"
+    },
+    {
+      "dimension_name": "语句流畅自然度",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 20,
+          "percentage": 33.3
+        },
+        "B": {
+          "count": 2,
+          "percentage": 3.3
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "本维度无 C/D 低分样本"
+      },
+      "low_score_problems": {
+        "summary": "无低分问题"
+      },
+      "improvement_direction": "保持现状，关注其他瓶颈维度",
+      "priority": 99,
+      "priority_reason": "无 C/D"
+    },
+    {
+      "dimension_name": "口语化程度",
+      "violation_level": "HARD",
+      "grade_distribution": {
+        "A": {
+          "count": 10,
+          "percentage": 16.7
+        },
+        "B": {
+          "count": 11,
+          "percentage": 18.3
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 1,
+          "percentage": 1.7
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A/B档case普遍使用语气词、缩略语、不完整句式及口语留白，避免书面化对比结构和工整表达。"
+      },
+      "low_score_problems": {
+        "summary": "唯一D档case存在硬性书面化表达：使用标准对比句式、无任何口语标记、句式完整工整，完全违背口语化核心要求。"
+      },
+      "improvement_direction": "强制在每轮回应中嵌入口语化锚点（至少1个语气词/1处缩略/1处省略或留白），并禁止任何形式的书面对比句式；模型需显式建模客户输入的口语特征，并在输出中延续与强化该语域。",
+      "priority": 1,
+      "priority_reason": "硬违规维度 + 存在明确D档case + 扣分规则严格（全句无口语标记即触发HARD违规） + N/A占比高暗示大量case未被有效评测，实际风险更隐蔽"
+    },
+    {
+      "dimension_name": "角色立场独立性",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 15,
+          "percentage": 25.0
+        },
+        "B": {
+          "count": 6,
+          "percentage": 10.0
+        },
+        "C": {
+          "count": 1,
+          "percentage": 1.7
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "A/B档case均展现出清晰、主动的价值判断和立场锚点，不依赖HWP话术框架进行回应。"
+      },
+      "low_score_problems": {
+        "summary": "C档case表现出附和式追问倾向：表面质疑实则默认HWP前提，未建立独立判断坐标，仅在HWP设定的概念框架内打转。"
+      },
+      "improvement_direction": "在HWP抛出产品机制描述后，优先插入1句基于自身价值观/生活目标/风险偏好的独立判断声明（如'我更看重资金随时可动用'或'我家目前没长期锁定需求'），再决定是否追问细节",
+      "priority": 1,
+      "priority_reason": "虽为SOFT违规，但该维度直接关系角色可信度根基；当前C/D档虽仅1例，但N/A占比高达63.3%，说明大量case未触发评分——需警惕'未显性表达即默认附和'的系统性立场缺位，且A档占比25%表明该能力可达成，具备快速优化基础"
+    },
+    {
+      "dimension_name": "回复长度合理性",
+      "violation_level": "SOFT",
+      "grade_distribution": {
+        "A": {
+          "count": 22,
+          "percentage": 36.7
+        },
+        "B": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "C": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "D": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "N/A": {
+          "count": 38,
+          "percentage": 63.3
+        }
+      },
+      "high_score_characteristics": {
+        "summary": "本维度无 C/D 低分样本"
+      },
+      "low_score_problems": {
+        "summary": "无低分问题"
+      },
+      "improvement_direction": "保持现状，关注其他瓶颈维度",
+      "priority": 99,
+      "priority_reason": "无 C/D"
+    }
+  ],
+  "cross_dimension_analysis": {
+    "case_profiles": [
+      {
+        "case_id": 11,
+        "overall_score": 30,
+        "strong_dimensions": [
+          "主题相关性(A)",
+          "话题边界守护(B)",
+          "人设信息忠实度(A)",
+          "流程推进被动性(A)",
+          "语句流畅自然度(A)"
+        ],
+        "weak_dimensions": [
+          "关键词脱敏度(D)",
+          "HWP跟随克制度(D)",
+          "关注点克制度(D)",
+          "专业术语回避(C)",
+          "回复独立语义值(C)"
+        ],
+        "root_cause_hypothesis": "模型在HWP密集输出专业术语（如'减额领取'）后，丧失语义抽象能力，陷入关键词反射式响应，导致多维硬违规并发；本质是缺乏对HWP话术的‘抗干扰语义净化’机制。",
+        "snippet": "减额领取？这名字听着像把保额砍掉来换钱……那以后孩子上学时，我的保额是不是越来越少了？"
+      },
+      {
+        "case_id": 12,
+        "overall_score": 30,
+        "strong_dimensions": [
+          "主题相关性(B)",
+          "话题边界守护(B)",
+          "人设信息忠实度(B)",
+          "流程推进被动性(B)",
+          "情绪响应匹配度(B)"
+        ],
+        "weak_dimensions": [
+          "关键词脱敏度(D)",
+          "HWP跟随克制度(D)",
+          "关注点克制度(D)",
+          "口语化程度(D)",
+          "信息递进合理性(C)",
+          "回复独立语义值(C)",
+          "专业术语回避(C)",
+          "角色立场独立性(C)"
+        ],
+        "root_cause_hypothesis": "HWP连续使用‘红利能变保额’等复合术语，触发模型术语链式解析本能，导致信息递进失控（跳至计息逻辑）、立场弱化（无自主判断）、语义依附（纯术语拼接），并因拒绝口语化锚点而触发硬违规。",
+        "snippet": "哦，红利能变保额？那如果我哪年想取钱，是按当时保额算，还是按我交的本金加利息算？"
+      },
+      {
+        "case_id": 6,
+        "overall_score": 40,
+        "strong_dimensions": [
+          "主题相关性(A)",
+          "话题边界守护(B)",
+          "人设信息忠实度(A)",
+          "流程推进被动性(A)",
+          "情绪响应匹配度(A)",
+          "语气人设匹配(A)",
+          "语句流畅自然度(A)"
+        ],
+        "weak_dimensions": [
+          "关注点克制度(D)",
+          "关键词脱敏度(C)",
+          "HWP跟随克制度(C)",
+          "回复独立语义值(C)"
+        ],
+        "root_cause_hypothesis": "HWP首次提出‘高端医疗’时，模型未激活‘非关注点过滤’机制，误将其识别为有效客户兴趣信号，导致后续回应完全锚定该词，暴露术语敏感性缺陷与立场建构惰性。",
+        "snippet": "高端医疗我以前在保险经纪公司干过，条款翻来覆去就那些，现在懒得折腾。"
+      }
+    ],
+    "dimension_correlations": [
+      {
+        "pair": [
+          "关键词脱敏度",
+          "关注点克制度"
+        ],
+        "correlation": "高度正向共现：所有D/C档案例中，二者同步违规率达100%；关键词锁定是触发关注点镜像追问的直接前提。",
+        "evidence": "low_score_cases中seq=11/12/6/10/13均同时在两维度获C/D；dimension_analyses指出二者均源于'HWP话术中专业术语的强依赖'"
+      },
+      {
+        "pair": [
+          "HWP跟随克制度",
+          "回复独立语义值"
+        ],
+        "correlation": "强负相关：HWP跟随越严重（C/D），独立语义值越低（C）；二者共享同一底层缺陷——缺乏用户视角的语义重构能力。",
+        "evidence": "seq=11/12/13在两维度均为C/D；dimension_analyses中二者improvement_direction均强调'基于客户生活场景/价值观的自主表达'，反向印证其同源性"
+      },
+      {
+        "pair": [
+          "信息递进合理性",
+          "角色立场独立性"
+        ],
+        "correlation": "协同弱化：当信息递进失当（如C档追问计息逻辑），角色立场必然弱化（C档附和式追问），因认知断层迫使用户放弃自主判断而转向HWP框架内求证。",
+        "evidence": "seq=12在信息递进合理性(C)与角色立场独立性(C)同步出现；dimension_analyses指出C档问题均体现'未建立独立判断坐标'"
+      }
+    ]
+  },
+  "overall_assessment": {
+    "quality_diagnosis": "整体表现中上（均分80.91），高分案例稳定输出自然、人设一致、边界清晰的对话；但存在系统性风险：在HWP密集嵌入保险专业术语（如'减额领取''红利变保额''高端医疗'）时，模型极易触发关键词反射链，导致多维硬违规并发（关键词脱敏度/HWP跟随克制度/关注点克制度），暴露出语义抗干扰能力、术语净化机制与用户立场建构能力的三重缺失。",
+    "key_bottleneck": "关键词脱敏度",
+    "systemic_issue": "模型将HWP话术中的销售术语默认为有效语义锚点，缺乏‘术语免疫’与‘非关注点过滤’双重机制；导致术语一旦出现即劫持整个响应逻辑，引发连锁式硬违规（平均单例触发3.2个C/D），且该问题在N/A占比超63%的背景下被严重低估。",
+    "optimization_priority": [
+      {
+        "rank": 1,
+        "dimension": "关键词脱敏度",
+        "problem": "HWP话术中专业术语（如'减额领取'）直接触发审讯式追问，去词测试100%失效",
+        "direction": "部署术语白名单+上下文感知拦截器，在HWP输入端实时识别并屏蔽销售话术术语，强制转向用户生活场景映射（如'减额领取'→'临时用钱需求'）",
+        "estimated_impact": "+12分"
+      },
+      {
+        "rank": 2,
+        "dimension": "HWP跟随克制度",
+        "problem": "对HWP新提概念逐字/逐点跟随，丧失用户视角的话题统合与跳脱能力",
+        "direction": "引入‘HWP话术意图解码层’，强制将HWP表述映射至用户隐含诉求（如'高端医疗'→'父母健康焦虑+支付能力假设'），再生成立场型回应",
+        "estimated_impact": "+10分"
+      },
+      {
+        "rank": 3,
+        "dimension": "关注点克制度",
+        "problem": "将HWP话术关键词误判为客户真实关注点，导致镜像追问式硬违规",
+        "direction": "建立‘客户主体表达优先级’机制，仅当客户自身话语中重复/强调某概念时才激活关注点响应，否则默认屏蔽HWP术语",
+        "estimated_impact": "+8分"
+      }
+    ],
+    "risk_notes": [
+      "N/A占比普遍高达63.3%，表明当前评测体系对多数case未完成全维度校验，实际质量风险远高于统计表观",
+      "口语化程度存在硬性D档案例，暴露模型对口语化特征（语气词/缩略/留白）的生成能力尚未固化，存在合规红线风险",
+      "信息递进合理性C档虽仅1例，但其代表的认知断层问题若扩散，将直接瓦解客户信任基础，需前置干预"
+    ]
+  },
+  "_meta": {
+    "loop_id": "20261010_101520",
+    "source_eval": "D:\\Tk\\loop\\TK-FACING-REPLY-EVAL\\loops\\20261010_101520\\runs\\v1_eval.xlsx",
+    "stats": {
+      "scored_count": 22,
+      "avg_score": 80.91,
+      "ok": 22,
+      "fail": 0,
+      "dimension_grade_distribution": {
+        "主题相关性": {
+          "A": 16,
+          "B": 6,
+          "C": 0,
+          "D": 0,
+          "N/A": 38
+        },
+        "话题边界守护": {
+          "A": 5,
+          "B": 17,
+          "C": 0,
+          "D": 0,
+          "N/A": 38
+        },
+        "信息递进合理性": {
+          "A": 4,
+          "B": 17,
+          "C": 1,
+          "D": 0,
+          "N/A": 38
+        },
+        "人设信息忠实度": {
+          "A": 13,
+          "B": 9,
+          "C": 0,
+          "D": 0,
+          "N/A": 38
+        },
+        "回复独立语义值": {
+          "A": 4,
+          "B": 10,
+          "C": 8,
+          "D": 0,
+          "N/A": 38
+        },
+        "关键词脱敏度": {
+          "A": 9,
+          "B": 7,
+          "C": 4,
+          "D": 2,
+          "N/A": 38
+        },
+        "HWP跟随克制度": {
+          "A": 9,
+          "B": 5,
+          "C": 6,
+          "D": 2,
+          "N/A": 38
+        },
+        "情绪响应匹配度": {
+          "A": 12,
+          "B": 10,
+          "C": 0,
+          "D": 0,
+          "N/A": 38
+        },
+        "关注点克制度": {
+          "A": 9,
+          "B": 7,
+          "C": 1,
+          "D": 5,
+          "N/A": 38
+        },
+        "专业术语回避": {
+          "A": 8,
+          "B": 12,
+          "C": 2,
+          "D": 0,
+          "N/A": 38
+        },
+        "流程推进被动性": {
+          "A": 20,
+          "B": 2,
+          "C": 0,
+          "D": 0,
+          "N/A": 38
+        },
+        "错误信息纠正": {
+          "A": 0,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 60
+        },
+        "语气人设匹配": {
+          "A": 15,
+          "B": 7,
+          "C": 0,
+          "D": 0,
+          "N/A": 38
+        },
+        "语句流畅自然度": {
+          "A": 20,
+          "B": 2,
+          "C": 0,
+          "D": 0,
+          "N/A": 38
+        },
+        "口语化程度": {
+          "A": 10,
+          "B": 11,
+          "C": 0,
+          "D": 1,
+          "N/A": 38
+        },
+        "角色立场独立性": {
+          "A": 15,
+          "B": 6,
+          "C": 1,
+          "D": 0,
+          "N/A": 38
+        },
+        "回复长度合理性": {
+          "A": 22,
+          "B": 0,
+          "C": 0,
+          "D": 0,
+          "N/A": 38
+        }
+      }
+    }
+  }
+}

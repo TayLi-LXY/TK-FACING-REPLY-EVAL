@@ -1,0 +1,31 @@
+{
+  "business_summary": "小范围(scenes=5,18,27) v1 均分 83.64，已评分 22 条。诊断由档位分布统计生成（DashScope 欠费，LLM 深钻不可用）。",
+  "adopted_directions": [
+    {
+      "rank": 1,
+      "dimension": "关键词脱敏度",
+      "problem": "HWP话术中专业术语（如'减额领取'）直接触发审讯式追问，去词测试100%失效",
+      "direction": "部署术语白名单+上下文感知拦截器，在HWP输入端实时识别并屏蔽销售话术术语，强制转向用户生活场景映射（如'减额领取'→'临时用钱需求'）",
+      "estimated_impact": "+12分"
+    },
+    {
+      "rank": 2,
+      "dimension": "HWP跟随克制度",
+      "problem": "对HWP新提概念逐字/逐点跟随，丧失用户视角的话题统合与跳脱能力",
+      "direction": "引入‘HWP话术意图解码层’，强制将HWP表述映射至用户隐含诉求（如'高端医疗'→'父母健康焦虑+支付能力假设'），再生成立场型回应",
+      "estimated_impact": "+10分"
+    },
+    {
+      "rank": 3,
+      "dimension": "关注点克制度",
+      "problem": "将HWP话术关键词误判为客户真实关注点，导致镜像追问式硬违规",
+      "direction": "建立‘客户主体表达优先级’机制，仅当客户自身话语中重复/强调某概念时才激活关注点响应，否则默认屏蔽HWP术语",
+      "estimated_impact": "+8分"
+    }
+  ],
+  "rejected_directions": [],
+  "confirmed_via": "web",
+  "loop_id": "20261010_101520",
+  "confirmed_at": "2026-10-10 10:28:38",
+  "source_diagnosis": "D:\\Tk\\loop\\TK-FACING-REPLY-EVAL\\loops\\20261010_101520\\reports\\diagnosis.json"
+}
